@@ -1,9 +1,60 @@
+"use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+  // Home nav
+  {
+    name: "home",
+    path: "/",
+  },
+
+  // Services nav
+  {
+    name: "services",
+    path: "/services",
+  },
+
+  // Resume nav
+  {
+    name: "resume",
+    path: "/resume",
+  },
+
+  // Work nav
+  {
+    name: "work",
+    path: "/work",
+  },
+
+  // Contact nav
+  {
+    name: "contact",
+    path: "/contact",
+  },
+];
 
 const Nav = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
-    <nav>desktop nav</nav>
-  )
-}
+    <nav className="flex gap-8">
+      {links.map((link, index) => {
+        return (
+          <Link
+            href={link.path}
+            key={index}
+            className={`${
+              link.path === pathname && "text-accent border-b-2 border-accent"
+            } capitalize font-medium hover:text-accent transition-all`}
+          >
+            {link.name}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+};
 
-export default Nav
+export default Nav;
