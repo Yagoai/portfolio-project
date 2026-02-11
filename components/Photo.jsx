@@ -19,15 +19,17 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten"
+          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten relative"
         >
           <Image
             src="/assets/photo.jpg"
             priority
             quality={100}
-            fill
-            alt="object-contain"
-          ></Image>
+            width={498}
+            height={498}
+            alt="Profile photo"
+            className="object-contain w-full h-full"
+          />
         </motion.div>
       </motion.div>
     </div>
