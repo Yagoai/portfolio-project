@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: "Portfolio - Nguyen Hong Anh",
-  description: "Professional portfolio showcasing my work and services",
+  description: "Professional portfolio showcasing my works and skills",
 };
 
 export default function RootLayout({ children }) {
