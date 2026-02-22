@@ -12,8 +12,8 @@ const links = [
 
   // Services nav
   {
-    name: "services",
-    path: "/services",
+    name: "skills",
+    path: "/skills",
   },
 
   // Resume nav
