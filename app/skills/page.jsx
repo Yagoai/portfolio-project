@@ -4,7 +4,7 @@ import { BsArrowDownRight } from "react-icons/bs";
 import Link from "next/link";
 import { easeInOut, motion } from "framer-motion";
 
-const services = [
+const skills = [
   {
     num: "01",
     title: "Frontend Development",
