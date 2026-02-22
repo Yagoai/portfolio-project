@@ -25,7 +25,6 @@ const services = [
     description: "Git",
     // href: "/",
   },
-
 ];
 
 const Services = () => {
@@ -58,7 +57,9 @@ const Services = () => {
                 {/* title */}
                 <h2>{services.title}</h2>
                 {/* description */}
-                <p className="text-accent font-semibold">{services.description}</p>
+                <p className="text-accent font-semibold">
+                  {services.description}
+                </p>
                 {/* border */}
                 <div className="border-b border-white/20 w-full"></div>
               </div>
