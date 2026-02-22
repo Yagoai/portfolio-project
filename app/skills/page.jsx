@@ -39,7 +39,7 @@ const Services = () => {
           }}
           className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
         >
-          {services.map((services, index) => {
+          {skills.map((skill, index) => {
             return (
               <div
                 key={index}
@@ -48,7 +48,7 @@ const Services = () => {
                 {/* top */}
                 <div className="w-full flex justify-between items-center ">
                   <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
-                    {services.num}
+                    {skill.num}
                   </div>
                   {/* <Link
                     href={services.href}
@@ -59,10 +59,10 @@ const Services = () => {
                 </div>
                 {/* title */}
                 <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
-                  {services.title}
+                  {skill.title}
                 </h2>
                 {/* description */}
-                <p className="text-white/60">{services.description}</p>
+                <p className="text-white/60">{skill.description}</p>
                 {/* border */}
                 <div className="border-b border-white/20 w-full"></div>
               </div>
