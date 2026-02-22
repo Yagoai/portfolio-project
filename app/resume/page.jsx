@@ -1,7 +1,199 @@
+"use client";
+
+// Components
+import ExperienceTab from "./components/ExperienceTab";
+
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+} from "react-icons/fa";
+
+import { SiTailwindcss, SiNextdotjs, SiNodedotjs } from "react-icons/si";
+
+// About data
+const about = {
+  title: "About me",
+  description:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, dolore et. Ducimus laborum magnam aperiam unde non?",
+  info: [
+    // Name
+    {
+      fieldName: "Name",
+      fieldValue: "Nguyen Hong Anh",
+    },
+    // Phone
+    {
+      fieldName: "Phone",
+      fieldValue: "(+84) 866551801",
+    },
+    // Experience
+    {
+      fieldName: "Experience",
+      fieldValue: "0 Year",
+    },
+    // Nationality
+    {
+      fieldName: "Nationality",
+      fieldValue: "Vietnam",
+    },
+    // Email
+    {
+      fieldName: "Email",
+      fieldValue: "nguyenhonganh19052003@gmail.com",
+    },
+    // Language
+    {
+      fieldName: "Language",
+      fieldValue: "English, Vietnamese",
+    },
+  ],
+};
+
+// Experience data
+const experience = {
+  icon: "",
+  title: "My experience",
+  description:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, dolore et. Ducimus laborum magnam aperiam unde non?",
+  items: [
+    // Experience 1
+    {
+      company: "Ahamove",
+      position: "Frontend Developer",
+      duration: "2025-2025",
+    },
+    // Experience 2
+    {
+      company: "Sample 2",
+      position: "FullStack Developer",
+      duration: "2026-2026",
+    },
+  ],
+};
+
+// Education data
+const education = {
+  icon: "",
+  title: "My education",
+  description: "",
+  items: [
+    {
+      // Education at RMIT
+      institution: "RMIT University",
+      position: "Software Engineering",
+      duration: "2021 - Current",
+    },
+  ],
+};
+
+// Skills data
+const skills = {
+  title: "My skills",
+  description: "",
+  skillList: [
+    // HTML5
+    {
+      icon: <FaHtml5 />,
+      name: "html 5",
+    },
+    // CSS3
+    {
+      icon: <FaCss3 />,
+      name: "css 3",
+    },
+    // JS
+    {
+      icon: <FaJs />,
+      name: "javascript",
+    },
+    // Next.js
+    {
+      icon: <SiNextdotjs />,
+      name: "next.js",
+    },
+    // TalwindCSS
+    {
+      icon: <SiTailwindcss />,
+      name: "tailwind.css",
+    },
+    // Node.js
+    {
+      icon: <SiNodedotjs />,
+      name: "node.js",
+    },
+    // Figma
+    {
+      icon: <FaFigma />,
+      name: "figma",
+    },
+  ],
+};
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+import { ScrollArea } from "@/components/ui/scroll-area";
+
+import { motion } from "framer-motion";
+
 const Resume = () => {
   return (
-    <div>resume page</div>
-  )
-}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+    >
+      <div className="container mx-auto">
+        <Tabs
+          defaultValue="experience"
+          className="flex flex-col xl:flex-row gap-[60px]"
+        >
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="about">About me</TabsTrigger>
+          </TabsList>
 
-export default Resume
+          {/* Content */}
+          <div className="min-h-[70vh] w-full">
+            {/* Experience */}
+            <TabsContent value="experience">
+              <ExperienceTab data={experience} />
+            </TabsContent>
+
+            {/* Education */}
+            <TabsContent value="education" className="w-full">
+              education
+            </TabsContent>
+
+            {/* Skills */}
+            <TabsContent value="skills" className="w-full">
+              skills
+            </TabsContent>
+
+            {/* About me */}
+            <TabsContent value="about" className="w-full">
+              about me
+            </TabsContent>
+          </div>
+        </Tabs>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Resume;
