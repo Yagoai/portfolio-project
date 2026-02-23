@@ -43,15 +43,15 @@ const about = {
       fieldName: "Nationality",
       fieldValue: "Vietnam",
     },
-    // Email
-    {
-      fieldName: "Email",
-      fieldValue: "nguyenhonganh19052003@gmail.com",
-    },
     // Language
     {
       fieldName: "Language",
       fieldValue: "English, Vietnamese",
+    },
+    // Email
+    {
+      fieldName: "Email",
+      fieldValue: "nguyenhonganh19052003@gmail.com",
     },
   ],
 };
