@@ -21,7 +21,7 @@ import { SiTailwindcss, SiNextdotjs, SiNodedotjs } from "react-icons/si";
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, dolore et. Ducimus laborum magnam aperiam unde non?",
+    "Final year Software Engineering student at RMIT with experience in mobile and frontend development. Passionate about building intuitive user interfaces and collaborating on web projects. Currently seeking a Frontend Web Developer Intern position to grow my skills in modern frontend technologies.",
   info: [
     // Name
     {
@@ -61,7 +61,7 @@ const experience = {
   icon: "",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, dolore et. Ducimus laborum magnam aperiam unde non?",
+    "A detailed look at my work history and the impact I've made in each position.",
   items: [
     // Experience 1
     {
@@ -82,7 +82,8 @@ const experience = {
 const education = {
   icon: "",
   title: "My education",
-  description: "Lorem ipsum dolor sit amet consectetur, adipisicing",
+  description:
+    "Currently pursuing my Bachelor's degree in Software Engineering at RMIT University",
   items: [
     {
       // Education at RMIT
@@ -96,7 +97,8 @@ const education = {
 // Skills data
 const skills = {
   title: "My skills",
-  description: "Lorem ipsum dolor sit amet consectetur, adipisicing",
+  description:
+    "Technologies and frameworks I'm proficient in, from front-end to back-end development",
   skillList: [
     // HTML5
     {
@@ -174,16 +176,16 @@ const Resume = () => {
           {/* Content */}
           <div className="min-h-[70vh] w-full">
             {/* Experience */}
-              <ExperienceTab data={experience} />
+            <ExperienceTab data={experience} />
 
             {/* Education */}
-              <EducationTab data={education} />
+            <EducationTab data={education} />
 
             {/* Skills */}
-              <SkillsTab data={skills} />
+            <SkillsTab data={skills} />
 
             {/* About me */}
-              <AboutTab data={about} />
+            <AboutTab data={about} />
           </div>
         </Tabs>
       </div>
