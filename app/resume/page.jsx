@@ -2,6 +2,9 @@
 
 // Components
 import ExperienceTab from "./components/ExperienceTab";
+import EducationTab from "./components/EducationTab";
+import SkillsTab from "./components/SkillsTab";
+import AboutTab from "./components/AboutTab";
 
 import {
   FaHtml5,
@@ -79,7 +82,7 @@ const experience = {
 const education = {
   icon: "",
   title: "My education",
-  description: "",
+  description: "Lorem ipsum dolor sit amet consectetur, adipisicing",
   items: [
     {
       // Education at RMIT
@@ -93,7 +96,7 @@ const education = {
 // Skills data
 const skills = {
   title: "My skills",
-  description: "",
+  description: "Lorem ipsum dolor sit amet consectetur, adipisicing",
   skillList: [
     // HTML5
     {
@@ -171,24 +174,16 @@ const Resume = () => {
           {/* Content */}
           <div className="min-h-[70vh] w-full">
             {/* Experience */}
-            <TabsContent value="experience">
               <ExperienceTab data={experience} />
-            </TabsContent>
 
             {/* Education */}
-            <TabsContent value="education" className="w-full">
-              education
-            </TabsContent>
+              <EducationTab data={education} />
 
             {/* Skills */}
-            <TabsContent value="skills" className="w-full">
-              skills
-            </TabsContent>
+              <SkillsTab data={skills} />
 
             {/* About me */}
-            <TabsContent value="about" className="w-full">
-              about me
-            </TabsContent>
+              <AboutTab data={about} />
           </div>
         </Tabs>
       </div>
