@@ -10,7 +10,7 @@ const links = [
     path: "/",
   },
 
-  // Services nav
+  // Skills nav
   {
     name: "skills",
     path: "/skills",
