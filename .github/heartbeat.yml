@@ -1,0 +1,19 @@
+name: heartbeat
+on:
+  schedule:
+    - cron: '0 * * * *'
+      timezone: "Asia/Ho_Chi_Minh"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ghi nhận trigger đã chạy
+        run: |
+          echo "fired   : $(date -u +'%Y-%m-%dT%H:%M:%SZ') UTC"
+          echo "hanoi   : $(TZ=Asia/Ho_Chi_Minh date +'%Y-%m-%dT%H:%M:%S') GMT+7"
+          echo "trigger : ${{ github.event_name }}"
