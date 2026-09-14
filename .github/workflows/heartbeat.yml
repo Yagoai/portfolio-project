@@ -1,17 +1,32 @@
-name: heartbeat
+name: Heartbeat
+
+# Bản sao tối giản của workflow "Lock" (home-assistant) đang chạy đúng mỗi giờ.
+# Giữ nguyên cấu trúc lịch của nó: cron UTC thuần, không `timezone`, không
+# khoảng giờ - để loại trừ mọi biến số khác ngoài bản thân scheduler.
+#
+# Đọc kết quả:
+#   gh run list --workflow heartbeat.yml --limit 50 \
+#     --json event,createdAt --jq '.[] | select(.event=="schedule") | .createdAt'
+
+# yamllint disable-line rule:truthy
 on:
   schedule:
-    - cron: "30 * * * *"
+    - cron: "0 * * * *"
+  workflow_dispatch:
 
 permissions: {}
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   tick:
+    name: Heartbeat tick
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Ghi nhận trigger đã chạy
-        run: |
+      - run: |
           echo "fired   : $(date -u +'%Y-%m-%dT%H:%M:%SZ') UTC"
           echo "hanoi   : $(TZ=Asia/Ho_Chi_Minh date +'%Y-%m-%dT%H:%M:%S') GMT+7"
           echo "trigger : ${{ github.event_name }}"
